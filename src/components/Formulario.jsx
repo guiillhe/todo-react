@@ -1,12 +1,13 @@
 import * as React from "react";
 import {useState} from 'react'
 
-const API = "http://localhost:5000";
+
 function Formulario() {
 
+  const API = "http://localhost:5000";
   const [title, setTitle]= useState("");
   const [time, setTime] = useState("");
-  const [todos, setTodos] = useState([]);
+  //const [todos, setTodos] = useState([])
   const handleSubmit = async (e)=>{
     e.preventDefault();
     const todo = {
@@ -25,7 +26,7 @@ function Formulario() {
       
     });
 
-    setTodos((prevState)=> [...prevState, todo])
+    handleSubmit((prevState)=> [...prevState, todo])
     
     setTitle("");
     setTime("");
